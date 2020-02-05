@@ -6,7 +6,7 @@ const fs = require('fs')
 const os = require('os')
 const path = require('path')
 const extract = require('extract-zip')
-const { downloadArtifact } = require('@electron/get')
+const { downloadArtifact, getHostArch } = require('@electron/get')
 
 if (process.env.ELECTRON_SKIP_BINARY_DOWNLOAD) {
   process.exit(0)
@@ -25,7 +25,7 @@ downloadArtifact({
   force: process.env.force_no_cache === 'true',
   cacheRoot: process.env.electron_config_cache,
   platform: process.env.npm_config_platform || process.platform,
-  arch: process.env.npm_config_arch || process.arch
+  arch: getHostArch(process.env.npm_config_arch || process.arch)
 }).then(extractFile).catch(err => {
   console.error(err.stack)
   process.exit(1)
