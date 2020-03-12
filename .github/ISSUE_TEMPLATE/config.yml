@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Questions about using Electron
+    url: https://www.electronjs.org/community
+    about: If you have questions about using Electron or distributing Electron apps, please ask in one of the community forums. The maintainers use the issue tracker as a backlog, so any issue that doesn't represent a task to be completed will be closed.
+  - name: electronjs.org Issues
+    url: https://github.com/electron/electronjs.org/issues/new
+    about: Issues with Electron's website (that are not related to pages specifically in /docs) should be directed to its separate issue tracker.
